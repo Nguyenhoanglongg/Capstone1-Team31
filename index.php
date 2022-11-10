@@ -137,7 +137,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 													<h4 class="info-box-heading orange">free shipping</h4>
 												</div>
 											</div>
-											<h6 class="text">free ship-on oder over $. 600.00</h6>
+											<h6 class="text">free ship-on oder over $ 600</h6>
 										</div>
 									</div><!-- .col -->
 
@@ -208,7 +208,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 
 														<div class="product-price">
 															<span class="price">
-																$.<?php echo htmlentities($row['productPrice']); ?> </span>
+																$ <?php echo htmlentities($row['productPrice']); ?> </span>
 															<span class="price-before-discount">$<?php echo htmlentities($row['productPriceBeforeDiscount']); ?> </span>
 
 														</div><!-- /.product-price -->
@@ -232,7 +232,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 							<div class="product-slider">
 								<div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
 									<?php
-									$ret = mysqli_query($con, "select * from products where category=3");
+									$ret = mysqli_query($con, "select * from products where category=7");
 									while ($row = mysqli_fetch_array($ret)) {
 										# code...
 
@@ -414,12 +414,12 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 														<div class="product-price">
 															<span class="price">
 																$ .<?php echo htmlentities($row['productPrice']); ?> </span>
-															<span class="price-before-discount">$.<?php echo htmlentities($row['productPriceBeforeDiscount']); ?></span>
+															<span class="price-before-discount">$<?php echo htmlentities($row['productPriceBeforeDiscount']); ?></span>
 
 														</div>
 
 													</div>
-													<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary">Add to Cart</a></div>
+													<div class="action"><a href="index.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary">Add to cart</a></div>
 												</div>
 											</div>
 										</div>
