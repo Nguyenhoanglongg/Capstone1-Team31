@@ -4661,7 +4661,13 @@ a {
   border-radius: 0px !important;
 }
 .checkout-box .checkout-progress-sidebar .panel-body ul li a {
-  color: #666666;
+  background-color: #BCBDC0!important;
+  border-color: #2196F3!important;
+  border-left: 6px solid #306B34!important;
+  color: white;
+  font-weight: 700;
+  font-size: medium;
+  border-radius: 0px 10px 10px 0px;
 }
 .checkout-box .checkout-progress-sidebar .panel .panel-heading {
   padding: 27px 30px;

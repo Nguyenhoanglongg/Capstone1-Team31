@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 				$_SESSION['cart'][$key]['quantity'] = $val;
 			}
 		}
-		echo "<script>alert('Your Cart hasbeen Updated');</script>";
+		echo "<script>alert('Your Cart has been Updated');</script>";
 	}
 }
 // Code for Remove a Product from Cart
