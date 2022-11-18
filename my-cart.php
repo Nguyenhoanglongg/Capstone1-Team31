@@ -178,7 +178,7 @@ if (isset($_POST['ordersubmit'])) {
 													$quantity = $_SESSION['cart'][$row['id']]['quantity'];
 													$subtotal = $_SESSION['cart'][$row['id']]['quantity'] * $row['productPrice'] + $row['shippingCharge'];
 													$totalprice += $subtotal;
-													$totalprice_vnd = round($subtotal * 23000);
+													$totalprice_vnd = round($totalprice * 23000);
 													$_SESSION['qnty'] = $totalqunty += $quantity;
 
 													array_push($pdtid, $row['id']);
@@ -320,8 +320,8 @@ if (isset($_POST['ordersubmit'])) {
 										<div class="cart-checkout-btn pull-right">
 											<form action="">
 												<button type="submit" name="ordersubmit" class="btn btn-primary">PROCEED TO CHECKOUT</button>
-
 											</form>
+											
 											<form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/xulythanhtoanMOMO.php">
 												<input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="momo">
 												<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">

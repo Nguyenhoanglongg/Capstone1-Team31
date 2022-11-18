@@ -6,7 +6,7 @@
     <div style="text-align: center;">
         <h1 style="text-align: center;">Thank You!</h1>
 
-        <p style="text-align: center;">Your transaction has been success</p>
+        <p style="text-align: center;">Your transaction has been success.</p>
     </div>
 
 
