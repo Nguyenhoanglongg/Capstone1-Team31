@@ -963,6 +963,7 @@ a {
 .top-bar .cnt-account {
   float: left;
   padding: 6px 0px;
+  font-size: medium;
 }
 .top-bar .cnt-account ul {
   margin: 0px;
@@ -989,7 +990,6 @@ a {
   display: block;
   float: left;
   padding-right: 6px;
-  font-size: 11px;
 }
 .top-bar .cnt-account ul > li a:hover,
 .top-bar .cnt-account ul > li a:focus {
@@ -1005,13 +1005,14 @@ a {
   display: inline-block;
 }
 .top-bar .cnt-block .list-inline > li > a {
-  padding: 6px 15px;
+  padding: 10px 20px;
   border: 1px solid #d4d4d4;
   -webkit-transition: all 0.2s linear 0s;
   -moz-transition: all 0.2s linear 0s;
   -o-transition: all 0.2s linear 0s;
   transition: all 0.2s linear 0s;
   color: #888;
+  font-size: 10px;
   display: inline-block;
 }
 .top-bar .cnt-block .list-inline > li > a .value {
