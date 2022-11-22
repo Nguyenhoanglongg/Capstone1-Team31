@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 				$_SESSION['cart'][$key]['quantity'] = $val;
 			}
 		}
-		echo "<script>alert('Your Cart hasbeen Updated');</script>";
+		echo "<script>alert('Your Cart has been Updated');</script>";
 	}
 }
 // Code for Remove a Product from Cart
@@ -178,6 +178,7 @@ if (isset($_POST['ordersubmit'])) {
 													$quantity = $_SESSION['cart'][$row['id']]['quantity'];
 													$subtotal = $_SESSION['cart'][$row['id']]['quantity'] * $row['productPrice'] + $row['shippingCharge'];
 													$totalprice += $subtotal;
+													$totalprice_vnd = round($totalprice * 23000);
 													$_SESSION['qnty'] = $totalqunty += $quantity;
 
 													array_push($pdtid, $row['id']);
@@ -307,7 +308,9 @@ if (isset($_POST['ordersubmit'])) {
 
 										<div class="cart-grand-total">
 											Grand Total<span class="inner-left-md"><?php echo $_SESSION['tp'] = "$totalprice" . "$"; ?></span>
+
 										</div>
+
 									</th>
 								</tr>
 							</thead><!-- /thead -->
@@ -315,12 +318,27 @@ if (isset($_POST['ordersubmit'])) {
 								<tr>
 									<td>
 										<div class="cart-checkout-btn pull-right">
-											<button type="submit" name="ordersubmit" class="btn btn-primary">PROCEED TO CHECKOUT</button>
-
+											<form action="">
+												<button type="submit" name="ordersubmit" class="btn btn-primary">PROCEED TO CHECKOUT</button>
+											</form>
+											
+											<form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/xulythanhtoanMOMO.php">
+												<input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="momo">
+												<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
+												<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
+											</form>
+											<form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/momo_ATM.php">
+												<input type="submit" value="Payment with MOMO ATM" class="btn btn-primary" name="momo-ATM">
+												<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
+												<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
+											</form>
 										</div>
+
+
 									</td>
 								</tr>
 							</tbody><!-- /tbody -->
+
 						</table>
 					<?php } else {
 									echo "Your shopping Cart is empty";

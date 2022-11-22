@@ -113,7 +113,7 @@ if (isset($_Get['action'])) {
 								<div class="clearfix cart-total">
 									<div class="pull-right">
 
-										<span class="text">Total :</span><span class='price'>$.<?php echo $_SESSION['tp'] = "$totalprice" . ".00"; ?></span>
+										<span class="text">Total :</span><span class='price'>$.<?php echo $_SESSION['tp'] = "$totalprice" . ""; ?></span>
 
 									</div>
 
