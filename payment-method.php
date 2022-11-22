@@ -2,6 +2,7 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
+
 if (strlen($_SESSION['login']) == 0) {
 	header('location:login.php');
 } else {
@@ -11,7 +12,9 @@ if (strlen($_SESSION['login']) == 0) {
 		unset($_SESSION['cart']);
 		header('location:order-history.php');
 	}
+
 ?>
+
 	<!DOCTYPE html>
 	<html lang="en">
 
@@ -83,6 +86,39 @@ if (strlen($_SESSION['login']) == 0) {
 											</a>
 										</h4>
 									</div>
+									<tbody>
+										<?php
+										$pdtid = array();
+										$sql = "SELECT * FROM products WHERE id IN(";
+										foreach ($_SESSION['cart'] as $id => $value) {
+											$sql .= $id . ",";
+										}
+										$sql = substr($sql, 0, -1) . ") ORDER BY id ASC";
+										$query = mysqli_query($con, $sql);
+										$totalprice = 0;
+										$totalqunty = 0;
+										if (!empty($query)) {
+											while ($row = mysqli_fetch_array($query)) {
+												$quantity = $_SESSION['cart'][$row['id']]['quantity'];
+												$subtotal = $_SESSION['cart'][$row['id']]['quantity'] * $row['productPrice'] + $row['shippingCharge'];
+												$totalprice += $subtotal;
+												$totalprice_vnd = round($totalprice * 23000);
+												$_SESSION['qnty'] = $totalqunty += $quantity;
+
+												array_push($pdtid, $row['id']);
+												//print_r($_SESSION['pid'])=$pdtid;exit;
+										?>
+
+
+
+
+										<?php }
+										}
+										$_SESSION['pid'] = $pdtid;
+										?>
+
+									</tbody>
+
 									<!-- panel-heading -->
 
 									<div id="collapseOne" class="panel-collapse collapse in">
@@ -96,7 +132,18 @@ if (strlen($_SESSION['login']) == 0) {
 												<input type="submit" value="Continue" name="submit" class="btn btn-primary" height="120px">
 
 											</form>
+											<form name="payment" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/xulythanhtoanMOMO.php">
+												<input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="paymethod" height="120px">
+												<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
+												<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
+											</form>
+											<form class="" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/momo_ATM.php">
+												<input type="submit" value="Payment with MOMO ATM" class="btn btn-primary" name="paymethod" height="120px">
+												<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
+												<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
+											</form>
 										</div>
+
 										<!-- panel-body  -->
 
 									</div><!-- row -->
