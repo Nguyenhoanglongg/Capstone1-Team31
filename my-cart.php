@@ -322,17 +322,7 @@ if (isset($_POST['ordersubmit'])) {
 											<form action="">
 												<button type="submit" name="ordersubmit" class="btn btn-primary">PROCEED TO CHECKOUT</button>
 											</form>
-											
-											<form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/xulythanhtoanMOMO.php">
-												<input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="momo">
-												<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
-												<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
-											</form>
-											<form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/momo_ATM.php">
-												<input type="submit" value="Payment with MOMO ATM" class="btn btn-primary" name="momo-ATM">
-												<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
-												<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
-											</form>
+
 										</div>
 
 
