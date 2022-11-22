@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
 		}
 		echo "<script>alert('Your Cart has been Updated');</script>";
 	}
+	// update
 }
 // Code for Remove a Product from Cart
 if (isset($_POST['remove_code'])) {
