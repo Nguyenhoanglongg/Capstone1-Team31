@@ -19,6 +19,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 		}
 	}
 }
+
 // COde for Wishlist
 if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 	if (strlen($_SESSION['login']) == 0) {
@@ -30,6 +31,7 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 	}
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,10 +86,37 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 			<script src="assets/js/html5shiv.js"></script>
 			<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+	<style>
+		a {
+			text-decoration: none;
+		}
 
+		#pagination {
+			text-align: right;
+			margin-top: 15px;
+		}
+
+		.page-item {
+			border: 1px solid #ccc;
+			padding: 10px 15px;
+			color: #000;
+			padding-top: 10px;
+
+		}
+
+		.clear-both {
+			clear: both;
+		}
+
+		.current-page {
+			background: purple;
+			color: #FFF;
+		}
+	</style>
 </head>
 
 <body class="cnt-home">
+
 
 	<header class="header-style-1">
 
@@ -195,16 +224,21 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 						<div id="myTabContent" class="tab-content">
 							<div class="tab-pane active " id="grid-container">
 								<h1>Best Seller</h1>
+
 								<?php
 
 								include('includes/config.php');
-								$item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 6;
+
+								$item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 4;
 								$current_page = !empty($_GET['page']) ? $_GET['page'] : 1;
 								$offset = ($current_page - 1) *  $item_per_page;
-								$products = mysqli_query($conn, "SELECT * FROM `products` ORDER BY `id` ASC LIMIT " . $item_per_page . " OFFSET " . $offset);
+
+								$products = mysqli_query($conn, "SELECT * FROM `products` ORDER BY `id` ASC LIMIT  " . $item_per_page . " OFFSET " . $offset);
 								$totalRecord = mysqli_query($conn, "SELECT * FROM `products`");
 								$totalRecord = $totalRecord->num_rows;
 								$totalPages = ceil($totalRecord / $item_per_page);
+
+
 								?>
 								<div class="category-product  inner-top-vs">
 									<div class="row">
@@ -256,12 +290,15 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 
 
 																	</ul>
+
 																</div><!-- /.action -->
 															</div><!-- /.cart -->
 														</div>
 
+
 													</div>
 												</div>
+
 											<?php }
 										} else { ?>
 
@@ -269,34 +306,17 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 												<h3>No Product Found</h3>
 											</div>
 
+
+
+
+
 										<?php } ?>
 
 
 
 
-
-
-
-
-
-
-
 									</div><!-- /.row -->
-									<nav aria-label="Page navigation example">
-										<ul class="pagination">
-											<li class="page-item">
-												<a class="page-link" href="#" aria-label="Previous">
-													<span aria-hidden="true">&laquo;</span>
-												</a>
-											</li>
-											<li class="page-item"><a class="page-link" href="?per_page=<?= $item_per_page ?>&page=<?= $num ?>"><?= $num ?></a></li>
-											<li class="page-item">
-												<a class="page-link" href="#" aria-label="Next">
-													<span aria-hidden="true">&raquo;</span>
-												</a>
-											</li>
-										</ul>
-									</nav>
+
 
 								</div><!-- /.category-product -->
 
@@ -309,11 +329,29 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 					</div><!-- /.col -->
 				</div>
 			</div>
-			<?php include('includes/brands-slider.php');
-			include('pagination.php')
-			?>
+			<div class="clear-both"></div>
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					<a class="page-item" href="?per_page=<?= $item_per_page ?>&page=<?= $first_page ?>">First</a>
+
+					<a class="page-item" href="?per_page=<?= $item_per_page ?>&page=<?= $prev_page ?>">Prev</a>
+
+					<a class="page-item" href="?per_page=<?= $item_per_page ?>&page=<?= $num ?>"><?= $num ?></a>
+
+					<a class="page-item" href="?per_page=<?= $item_per_page ?>&page=<?= $next_page ?>">Next</a>
+
+					<a class="page-item" href="?per_page=<?= $item_per_page ?>&page=<?= $end_page ?>">Last</a>
+
+
+
+
+				</ul>
+			</nav>
+
 
 		</div>
+
+
 	</div>
 	<?php include('includes/footer.php'); ?>
 	<script src="assets/js/jquery-1.11.1.min.js"></script>

@@ -34,7 +34,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 	<meta name="keywords" content="MediaCenter, Template, eCommerce">
 	<meta name="robots" content="all">
 
-	<title>Shopping Portal Home Page</title>
+	<title>Shopping Home Page</title>
 
 	<!-- Bootstrap Core CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -232,7 +232,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 							<div class="product-slider">
 								<div class="owl-carousel home-owl-carousel custom-carousel owl-theme">
 									<?php
-									$ret = mysqli_query($con, "select * from products where category=7");
+									$ret = mysqli_query($con, "select * from products where category=1");
 									while ($row = mysqli_fetch_array($ret)) {
 										# code...
 
@@ -340,7 +340,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 					<div class="row">
 						<div class="col-md-6">
 							<section class="section">
-								<h3 class="section-title">Smart Phones</h3>
+								<h3 class="section-title">New Release</h3>
 								<div class="owl-carousel homepage-owl-carousel custom-carousel outer-top-xs owl-theme" data-item="2">
 
 									<?php
@@ -356,7 +356,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 												<div class="product">
 													<div class="product-image">
 														<div class="image">
-															<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" width="180" height="300"></a>
+															<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" width="300" height="300"></a>
 														</div><!-- /.image -->
 													</div><!-- /.product-image -->
 
@@ -386,10 +386,10 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 						</div>
 						<div class="col-md-6">
 							<section class="section">
-								<h3 class="section-title">Laptops</h3>
-								<div class="owl-carousel homepage-owl-carousel custom-carousel outer-top-xs owl-theme" data-item="2">
+								<h3 class="section-title">Computer & Technology </h3>
+								<div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs" data-item="1">
 									<?php
-									$ret = mysqli_query($con, "select * from products where category=4 and subCategory=6");
+									$ret = mysqli_query($con, "select * from products where category=1 and subCategory=4");
 									while ($row = mysqli_fetch_array($ret)) {
 									?>
 
@@ -401,7 +401,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 												<div class="product">
 													<div class="product-image">
 														<div class="image">
-															<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" width="300" height="300"></a>
+															<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" width="200" height="300"></a>
 														</div><!-- /.image -->
 													</div><!-- /.product-image -->
 
@@ -438,10 +438,10 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 
 
 				<section class="section featured-product inner-xs wow fadeInUp">
-					<h3 class="section-title">Fashion</h3>
+					<h3 class="section-title">Comic & Graphic Novel </h3>
 					<div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
 						<?php
-						$ret = mysqli_query($con, "select * from products where category=6");
+						$ret = mysqli_query($con, "select * from products where subcategory=5");
 						while ($row = mysqli_fetch_array($ret)) {
 							# code...
 

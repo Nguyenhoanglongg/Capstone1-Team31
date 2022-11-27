@@ -24,6 +24,19 @@ $oid = intval($_GET['oid']);
 </head>
 
 <body>
+  <style>
+    .fontkink1 {
+      color: black;
+
+    }
+
+
+    /* .status {
+      font-size: 15px;
+      font-weight: bold;
+      color: #00FF7F;
+    } */
+  </style>
 
   <div style="margin-left:50px;">
     <form name="updateticket" id="updateticket" method="post">
@@ -54,7 +67,12 @@ $oid = intval($_GET['oid']);
             </tr>
             <tr height="20">
               <td class="fontkink1"><b>Status:</b></td>
-              <td class="fontkink"><?php echo $row['status']; ?></td>
+              <td class="status" style="color:<?php if ($row['status'] == 'in Process') {
+                                                echo 'orange';
+                                              } else {
+                                                echo 'green';
+                                              } ?>;"><?php echo $row['status']; ?>
+              </td>
             </tr>
             <tr height="20">
               <td class="fontkink1"><b>Remark:</b></td>

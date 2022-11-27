@@ -9,6 +9,7 @@ if (strlen($_SESSION['login']) == 0) {
 	if (isset($_POST['submit'])) {
 
 		mysqli_query($con, "update orders set 	paymentMethod='" . $_POST['paymethod'] . "' where userId='" . $_SESSION['id'] . "' and paymentMethod is null ");
+		mysqli_query($con, "select * from orders order by orderDate DESC");
 		unset($_SESSION['cart']);
 		header('location:order-history.php');
 	}
@@ -122,27 +123,33 @@ if (strlen($_SESSION['login']) == 0) {
 									<!-- panel-heading -->
 
 									<div id="collapseOne" class="panel-collapse collapse in">
+										<section>
 
-										<!-- panel-body  -->
-										<div class="panel-body">
-											<form name="payment" method="post">
-												<input type="radio" name="paymethod" value="COD" checked="checked"> COD
-												<input type="radio" name="paymethod" value="Internet Banking"> Internet Banking
-												<input type="radio" name="paymethod" value="Debit / Credit card"> Debit / Credit card <br />
-												<input type="submit" value="Continue" name="submit" class="btn btn-primary" height="120px">
+											<!-- panel-body  -->
+											<div class="panel-body">
+												<form name="payment" method="post">
+													<input type="radio" name="paymethod" value="COD" checked="checked"> COD
+													<input type="radio" name="paymethod" value="Internet Banking"> Internet Banking
+													<input type="radio" name="paymethod" value="Debit / Credit card"> Debit / Credit card
+													<input type="radio" name="paymethod" value="Payment with MOMO QRCode"> MOMO QRCode <br />
 
-											</form>
-											<form name="payment" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/xulythanhtoanMOMO.php">
-												<input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="paymethod" height="120px">
-												<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
-												<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
-											</form>
-											<form class="" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/momo_ATM.php">
-												<input type="submit" value="Payment with MOMO ATM" class="btn btn-primary" name="paymethod" height="120px">
-												<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
-												<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
-											</form>
-										</div>
+													<!-- <input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="paymethod" height="120px"> -->
+
+													<input type="submit" value="Continue" name="submit" class="btn btn-primary" height="120px">
+
+												</form>
+												<form name="payment" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/xulythanhtoanMOMO.php">
+													<input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="submit" height="120px">
+													<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
+													<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
+												</form>
+												<form name="payment" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/momo_ATM.php">
+													<input type="submit" value="Payment with MOMO ATM" class="btn btn-primary" name="submit" height="120px">
+													<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
+													<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
+												</form>
+											</div>
+										</section>
 
 										<!-- panel-body  -->
 
