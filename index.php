@@ -36,6 +36,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 
 	<title>Shopping Home Page</title>
 
+
 	<!-- Bootstrap Core CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
@@ -344,7 +345,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 								<div class="owl-carousel homepage-owl-carousel custom-carousel outer-top-xs owl-theme" data-item="2">
 
 									<?php
-									$ret = mysqli_query($con, "select * from products where category=4 and subCategory=4");
+									$ret = mysqli_query($con, "select * from products where category=1 and subCategory=2");
 									while ($row = mysqli_fetch_array($ret)) {
 									?>
 
@@ -356,7 +357,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 												<div class="product">
 													<div class="product-image">
 														<div class="image">
-															<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" width="300" height="300"></a>
+															<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" width="200" height="300"></a>
 														</div><!-- /.image -->
 													</div><!-- /.product-image -->
 
@@ -387,7 +388,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 						<div class="col-md-6">
 							<section class="section">
 								<h3 class="section-title">Computer & Technology </h3>
-								<div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs" data-item="1">
+								<div class="owl-carousel homepage-owl-carousel custom-carousel outer-top-xs owl-theme" data-item="2">
 									<?php
 									$ret = mysqli_query($con, "select * from products where category=1 and subCategory=4");
 									while ($row = mysqli_fetch_array($ret)) {
