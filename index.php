@@ -358,6 +358,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 													<div class="product-image">
 														<div class="image">
 															<a href="product-details.php?pid=<?php echo htmlentities($row['id']); ?>"><img src="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" data-echo="admin/productimages/<?php echo htmlentities($row['id']); ?>/<?php echo htmlentities($row['productImage1']); ?>" width="200" height="300"></a>
+
 														</div><!-- /.image -->
 													</div><!-- /.product-image -->
 
@@ -371,7 +372,6 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 															<span class="price">
 																$. <?php echo htmlentities($row['productPrice']); ?> </span>
 															<span class="price-before-discount">$.<?php echo htmlentities($row['productPriceBeforeDiscount']); ?></span>
-
 														</div>
 
 													</div>
