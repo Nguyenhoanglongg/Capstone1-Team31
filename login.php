@@ -11,6 +11,7 @@ if (isset($_POST['submit'])) {
 	$query = mysqli_query($con, "insert into users(name,email,contactno,password) values('$name','$email','$contactno','$password')");
 	if ($query) {
 		echo "<script>alert('You are successfully register');</script>";
+		$_SESSION['emailid'] = $email;
 	} else {
 		echo "<script>alert('Not register something went worng');</script>";
 	}
@@ -24,6 +25,7 @@ if (isset($_POST['login'])) {
 	if ($num > 0) {
 		$extra = "my-cart.php";
 		$_SESSION['login'] = $_POST['email'];
+		$_SESSION['emailid'] = $num['email'];
 		$_SESSION['id'] = $num['id'];
 		$_SESSION['username'] = $num['name'];
 		$uip = $_SERVER['REMOTE_ADDR'];

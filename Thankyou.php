@@ -1,29 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include('./includes/config.php');
+if (isset($_GET['partnerCode'])) {
+    // $userID = $_SESSION['id'];
+    $code_order = rand(0, 9999);
+    $partnerCode = $_GET['partnerCode'];
+    $orderId = $_GET['orderId'];
+    $amount = $_GET['amount'];
+    $orderInfo = $_GET['orderInfo'];
+    $orderType = $_GET['orderType'];
+    $transId = $_GET['transId'];
+    $payType = $_GET['payType'];
+    $paymentMethod = 'momo';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    //insert database momo
+    $insert_momo = "INSERT INTO tbl_momo(partner_Code,order_Id,amount,order_Info,order_Type,trans_Id,pay_Type,code_Cart) 
+    VALUE('" . $partnerCode . "','" . $orderId . "','" . $amount . "','" . $orderInfo . "','" . $orderType . "','" . $transId . "','" . $payType . "','" . $code_order . "')";
+    $cart_query = mysqli_query($mysqli, $insert_momo);
 
-</head>
-
-<body>
-    <style>
-        a {
-            text-decoration: none;
-        }
-    </style>
-    <p style="text-align: center;"><img src="https://cdn.jotfor.ms/img/check-icon.png" alt="" width="128" height="128" /></p>
-    <div style="text-align: center;">
-        <h1 style="text-align: center;">Thank You!</h1>
-
-        <p style="text-align: center;">Your transaction has been success.</p>
-        <a class="fa-solid fa-circle-arrow-left" href="index.php"> Return home page</a>
-
-    </div>
-
-</body>
-
-</html>
+    if ($cart_query) {
+        //insert gio hàng
+        echo '<h3>Giao dịch thanh toán bằng MOMO thành công</h3>';
+        echo '<p>Vui lòng vào trang <a target="_blank" href="order-history">lịch sử đơn hàng</a> để xem chi tiết đơn hàng của bạn</p>';
+    } else {
+        echo 'Giao dịch MOMO thất bại';
+    }
+}
+?>
+<p>Cám ơn bạn đã mua hàng ,chúng tôi sẽ liên hệ bạn trong thời gian sớm nhất</p>
