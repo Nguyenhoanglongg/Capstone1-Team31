@@ -128,9 +128,10 @@ if (strlen($_SESSION['login']) == 0) {
 											<!-- panel-body  -->
 											<div class="panel-body">
 												<form name="payment" method="post">
+
 													<input type="radio" name="paymethod" value="COD" checked="checked"> COD
-													<input type="radio" name="paymethod" value="Internet Banking"> Internet Banking
-													<input type="radio" name="paymethod" value="Debit / Credit card"> Debit / Credit card
+													<!-- <input type="radio" name="paymethod" value="Internet Banking"> Internet Banking
+													<input type="radio" name="paymethod" value="Debit / Credit card"> Debit / Credit card -->
 													<input type="radio" name="paymethod" value="Payment with MOMO QRCode"> MOMO QRCode <br />
 
 													<!-- <input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="paymethod" height="120px"> -->
@@ -139,12 +140,12 @@ if (strlen($_SESSION['login']) == 0) {
 
 												</form>
 												<form name="payment" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/xulythanhtoanMOMO.php">
-													<input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="submit" height="120px">
+													<input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="paymethod" height="120px">
 													<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
 													<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
 												</form>
 												<form name="payment" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/momo_ATM.php">
-													<input type="submit" value="Payment with MOMO ATM" class="btn btn-primary" name="submit" height="120px">
+													<input type="submit" value="Payment with MOMO ATM" class="btn btn-primary" name="paymethod" height="120px">
 													<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
 													<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
 												</form>

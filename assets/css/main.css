@@ -1119,6 +1119,7 @@ a {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
+  border:none;
   display: inline-block;
   float: right;
   margin: 0px;
