@@ -1,3 +1,6 @@
+<style>
+	
+</style>
 <div id="brands-carousel" class="logo-slider wow fadeInUp">
 	<h3 class="section-title">Popular Authors</h3>
 	<div class="logo-slider-inner">
@@ -5,13 +8,6 @@
 			<div class="item">
 				<a href="https://www.amazon.com/Michelle-Obama/e/B07B436TLF/ref=s9_acss_bw_cg_CFQ422_2a1_w?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-15&pf_rd_r=7Q38YCTH1SYRZRDCRKW0&pf_rd_t=101&pf_rd_p=776ce935-6a5f-443d-8bc6-c4047d6e341c&pf_rd_i=283155" class="image">
 					<img src="https://images-na.ssl-images-amazon.com/images/G/01/US-hq/2020/img/Books/CatFav/Q2-20/Michelle_Obama.jpg" alt="">
-				</a>
-			</div>
-			<!--/.item-->
-
-			<div class="item">
-				<a href="https://www.amazon.com/gp/product/B09D3GZ8JP/ref=s9_acss_bw_cg_CFQ422_2b1_w?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-15&pf_rd_r=7Q38YCTH1SYRZRDCRKW0&pf_rd_t=101&pf_rd_p=776ce935-6a5f-443d-8bc6-c4047d6e341c&pf_rd_i=283155" class="image">
-					<img src="https://images-na.ssl-images-amazon.com/images/G/01/US-hq/2020/img/Books/CatFav/Q3-2022/Lore_Olympus.jpg" alt="">
 				</a>
 			</div>
 			<!--/.item-->

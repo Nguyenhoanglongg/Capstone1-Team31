@@ -155,7 +155,7 @@ if (isset($_POST['submit'])) {
 										<div class="products">
 											<div class="hot-deal-wrapper">
 												<div class="image">
-													<img src="admin/productimages/<?php echo htmlentities($rws['productName']); ?>/<?php echo htmlentities($rws['productImage1']); ?>" width="200" height="334" alt="">
+													<img src="admin/productimages/<?php echo htmlentities($rws['id']); ?>/<?php echo htmlentities($rws['productImage1']); ?>" width="200" height="334" alt="">
 												</div>
 
 											</div><!-- /.hot-deal-wrapper -->
