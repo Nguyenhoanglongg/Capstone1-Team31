@@ -345,7 +345,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 								<div class="owl-carousel homepage-owl-carousel custom-carousel outer-top-xs owl-theme" data-item="2">
 
 									<?php
-									$ret = mysqli_query($con, "select * from products where category=4 and subCategory=4");
+									$ret = mysqli_query($con, "select * from products where category=1 and subCategory=2");
 									while ($row = mysqli_fetch_array($ret)) {
 									?>
 
