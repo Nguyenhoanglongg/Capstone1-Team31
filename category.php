@@ -244,6 +244,7 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 									<div class="row">
 										<?php
 										$ret = mysqli_query($con, "select * from products where category='$cid'");
+
 										$num = mysqli_num_rows($ret);
 										if ($num > 0) {
 											while ($row = mysqli_fetch_array($ret)) { ?>
@@ -336,7 +337,7 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 
 					<a class="page-item" href="?per_page=<?= $item_per_page ?>&page=<?= $prev_page ?>">Prev</a>
 
-					<a class="page-item" href="?per_page=<?= $item_per_page ?>&page=<?= $num ?>"><?= $num ?></a>
+					<a class="page-item" href="?per_page=<?= $item_per_page ?>&page=<?= $num_page ?>"><?= $num_page ?></a>
 
 					<a class="page-item" href="?per_page=<?= $item_per_page ?>&page=<?= $next_page ?>">Next</a>
 
