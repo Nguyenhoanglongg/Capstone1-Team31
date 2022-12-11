@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include('include/config.php');
@@ -25,7 +24,7 @@ if(isset($_POST['submit']))
 //for getting product id
 $query=mysqli_query($con,"select max(id) as pid from products");
 	$result=mysqli_fetch_array($query);
-	 $productid=$result['pid']+1;
+	$productid=$result['pid']+1;
 	$dir="productimages/$productid";
 if(!is_dir($dir)){
 		mkdir("productimages/".$productid);
@@ -55,7 +54,7 @@ $_SESSION['msg']="Product Inserted Successfully !!";
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 
-   <script>
+<script>
 function getSubcat(val) {
 	$.ajax({
 	type: "POST",
