@@ -179,11 +179,11 @@ if (isset($_POST['login'])) {
 							</span>
 							<div class="form-group">
 								<label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
-								<input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
+								<input placeholder="example: user1@gmail.com" type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
 							</div>
 							<div class="form-group">
 								<label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
-								<input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1">
+								<input placeholder="Your Password" type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1">
 							</div>
 							<div class="radio outer-xs">
 								<a href="forgot-password.php" class="forgot-password pull-right">Forgot your Password?</a>

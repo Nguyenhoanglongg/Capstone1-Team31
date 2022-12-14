@@ -18,7 +18,9 @@
                         </div><!-- /.footer-logo -->
 
                         <div class="module-body m-t-20">
-                            <p class="about-us"> Developer By <a href="./">C1SE.Team 31 </a></p>
+                            <p class="about-us"> Developer By <a href="./">C1SE.Team 31 </a>
+                            </p>
+
                             <div class="social-icons">
 
                                 <a href="localhost/shopping/" class='active'><i class="icon fa fa-facebook"></i></a>
@@ -81,8 +83,13 @@
                                         </span>
                                     </div>
                                     <div class="media-body">
-                                        <p>VIETNAM</p>
+                                        <p>VIETNAM</p> <br>
+                                        <h3 style="color:White"> > Quick links</h3>
+                                        <a href="./login.php" class="icon fa fa-sign-in"> Login</a> <br>
+                                        <a href="./my-account.php" class="icon fa fa-user"> My Profile</a> <br>
+                                        <a href="./my-cart.php" class="icon fa fa-shopping-cart"> My Cart</a>
                                     </div>
+
                                 </li>
 
 
