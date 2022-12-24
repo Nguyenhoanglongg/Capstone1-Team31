@@ -1,5 +1,5 @@
 <?php
-
+include("./config.php");
 if (isset($_Get['action'])) {
 	if (!empty($_SESSION['cart'])) {
 		foreach ($_POST['quantity'] as $key => $val) {
@@ -11,6 +11,9 @@ if (isset($_Get['action'])) {
 		}
 	}
 }
+$result = mysqli_query($con, "SELECT id, subcategory FROM `subcategory`");
+
+
 ?>
 <div class="main-header">
 	<div class="container">
@@ -30,16 +33,39 @@ if (isset($_Get['action'])) {
 					</a>
 				</div>
 			</div>
+
 			<div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
 				<div class="search-area">
 					<form name="search" method="post" action="search-result.php">
 						<div class="control-group">
-
 							<input class="search-field" placeholder="Search here..." name="product" required="required" />
 
 							<button class="search-button" type="submit" name="search"></button>
 
 						</div>
+
+						<select name="type" style="width: 200px;">
+							<option selected="selected" value="">All</option>
+							<?php
+							if ($result) {
+								while ($row = mysqli_fetch_array($result)) {
+									$subcategory = $row["subcategory"];
+									$id = $row['id'];
+									echo "<option value = '$id'>$subcategory<br></option>";
+								}
+							}
+							?>
+						</select>
+
+						<style>
+							select {
+								font-size: large;
+
+							}
+						</style>
+
+
+
 					</form>
 				</div><!-- /.search-area -->
 				<!-- ============================================================= SEARCH AREA : END ============================================================= -->

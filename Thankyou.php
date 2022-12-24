@@ -21,7 +21,7 @@ if (isset($_GET['partnerCode'])) {
         echo '<h3>Giao dịch thanh toán bằng MOMO thành công</h3>';
         echo '<p>Vui lòng vào trang <a target="_blank" href="order-history.php">lịch sử đơn hàng</a> để xem chi tiết đơn hàng của bạn</p>';
     } else {
-        echo 'Giao MOMO thất bại';
+        echo 'Giao dịch MOMO thất bại';
     }
 }
 ?>

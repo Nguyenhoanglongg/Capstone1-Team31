@@ -139,19 +139,20 @@ if (strlen($_SESSION['login']) == 0) {
 													<input type="submit" value="Continue" name="submit" class="btn btn-primary" height="120px">
 
 												</form>
-												<form name="payment" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/xulythanhtoanMOMO.php">
+												<form name="submit" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/xulythanhtoanMOMO.php">
 													<input type="submit" value="Payment with MOMO QRCode" class="btn btn-primary" name="paymethod" height="120px">
 													<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
+
 													<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
 												</form>
-												<form name="payment" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/momo_ATM.php">
+												<form name="submit" method="post" target="_blank" enctype="application/x-www-form-urlencoded" action="./Payment_momo/momo_ATM.php">
 													<input type="submit" value="Payment with MOMO ATM" class="btn btn-primary" name="paymethod" height="120px">
 													<input type="hidden" value="<?php echo $totalprice_vnd ?>" name="totalprice_vnd">
 													<img src="./brandsimage/MoMo_Logo.png" height="40" alt="">
 												</form>
 											</div>
 										</section>
-										
+
 
 										<!-- panel-body  -->
 

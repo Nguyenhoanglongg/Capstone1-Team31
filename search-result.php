@@ -3,6 +3,17 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 $find = "%{$_POST['product']}%";
+//var_dump($find);
+$type = $_POST['type'];
+$sql = "";
+if ($type != '') {
+	$sql = "select * from products where productName like '$find' and subCategory = '$type' ";
+} else {
+	$sql = "select * from products where productName like '$find'";
+}
+$ret = mysqli_query($con, $sql);
+//var_dump($ret);
+//var_dump($sql);
 if (isset($_GET['action']) && $_GET['action'] == "add") {
 	$id = intval($_GET['id']);
 	if (isset($_SESSION['cart'][$id])) {
@@ -25,7 +36,7 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 		header('location:login.php');
 	} else {
 		mysqli_query($con, "insert into wishlist(userId,productId) values('" . $_SESSION['id'] . "','" . $_GET['pid'] . "')");
-		echo "<script>alert('Product aaded in wishlist');</script>";
+		echo "<script>alert('Product added in wishlist');</script>";
 		header('location:my-wishlist.php');
 	}
 }
@@ -188,7 +199,8 @@ if (isset($_GET['pid']) && $_GET['action'] == "wishlist") {
 								<div class="category-product  inner-top-vs">
 									<div class="row">
 										<?php
-										$ret = mysqli_query($con, "select * from products where productName like '$find'");
+
+
 										$num = mysqli_num_rows($ret);
 										if ($num > 0) {
 											while ($row = mysqli_fetch_array($ret)) { ?>
