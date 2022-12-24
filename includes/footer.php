@@ -84,10 +84,7 @@
                                     </div>
                                     <div class="media-body">
                                         <p>VIETNAM</p> <br>
-                                        <h3 style="color:White"> > Quick links</h3>
-                                        <a href="./login.php" class="icon fa fa-sign-in"> Login</a> <br>
-                                        <a href="./my-account.php" class="icon fa fa-user"> My Profile</a> <br>
-                                        <a href="./my-cart.php" class="icon fa fa-shopping-cart"> My Cart</a>
+                                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F31.bookstore%2F&tabs=timeline&width=350&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="350" height="70" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                     </div>
 
                                 </li>
