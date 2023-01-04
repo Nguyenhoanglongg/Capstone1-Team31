@@ -76,7 +76,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
 		<?php include('includes/top-header.php'); ?>
 		<?php include('includes/main-header.php'); ?>
 		<?php include('includes/menu-bar.php'); ?>
-	</header>
+	</header> 
 
 	<!-- ============================================== HEADER : END ============================================== -->
 	<div class="body-content outer-top-xs" id="top-banner-and-menu">

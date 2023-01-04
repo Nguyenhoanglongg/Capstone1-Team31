@@ -44,7 +44,7 @@ $result = mysqli_query($con, "SELECT id, subcategory FROM `subcategory`");
 
 						</div>
 
-						<select name="type" style="width: 200px;">
+						<select name="type" style="width: 100px;">
 							<option selected="selected" value="">All</option>
 							<?php
 							if ($result) {
@@ -60,11 +60,16 @@ $result = mysqli_query($con, "SELECT id, subcategory FROM `subcategory`");
 						<style>
 							select {
 								font-size: large;
-
+								position: absolute ;
+								top: 55px;
+								left: 15px;
+								border: 1px solid #f5f5f5;
+								font-family: inherit;
+								font-size: inherit;
+								line-height: inherit;
+								padding: 5px 5px;
 							}
 						</style>
-
-
 
 					</form>
 				</div><!-- /.search-area -->
