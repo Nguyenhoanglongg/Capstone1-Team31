@@ -97,7 +97,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 										</div>
 
 										<div class="control-group">
-											<label class="control-label" for="basicinput">Current Password</label>
+											<label class="control-label" for="basicinput">Current new Password</label>
 											<div class="controls">
 												<input type="password" placeholder="Enter your new Password again" name="confirmpassword" class="span8 tip" required>
 											</div>

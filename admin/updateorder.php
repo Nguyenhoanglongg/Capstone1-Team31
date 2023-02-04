@@ -97,6 +97,7 @@ $st='Delivered';
         <select name="status" class="fontkink" required="required" >
           <option value="">Select Status</option>
                  <option value="in Process">In Process</option>
+                 <option value="in Process">Paid, In Process</option>
                   <option value="Delivered">Delivered</option>
         </select>
         </span></td>

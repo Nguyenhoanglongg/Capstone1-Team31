@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('./includes/config.php');
 if (isset($_GET['partnerCode'])) {
 
@@ -15,7 +16,7 @@ if (isset($_GET['partnerCode'])) {
     //insert database vnpay
     $insert_momo = "INSERT INTO tbl_momo(partner_Code,order_Id,amount,order_Info,order_Type,trans_Id,pay_Type,code_Cart) VALUE('" . $partnerCode . "','" . $orderId . "','" . $amount . "','" . $orderInfo . "','" . $orderType . "','" . $transId . "','" . $payType . "','" . $code_order . "')";
     $cart_query = mysqli_query($con, $insert_momo);
-
+    unset ($_SESSION ['cart']);
     if ($cart_query) {
         //insert gio hàng
         echo '<h3>Giao dịch thanh toán bằng MOMO thành công</h3>';
